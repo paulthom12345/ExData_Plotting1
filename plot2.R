@@ -5,5 +5,6 @@ fencedData <- dataFile[dataFile$Date >= as.Date("2007-02-01") & dataFile$Date <=
 fencedData$DateTime <- as.POSIXlt(paste(fencedData$Date, fencedData$Time), "%d/%m/%Y %H:%M:%S")
 
 png("plot2.png", width=480, height=480)
+par(bg=NA)
 plot(fencedData$DateTime, fencedData$Global_active_power, type="l", xlab="", ylab="Global Active Power (kilowatts)")
 dev.off()

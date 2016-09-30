@@ -3,8 +3,8 @@ dataFile$Date <- as.Date(dataFile$Date, "%d/%m/%Y")
 fencedData <- dataFile[dataFile$Date >= as.Date("2007-02-01") & dataFile$Date <= as.Date("2007-02-02"),]
 fencedData$DateTime <- as.POSIXlt(paste(fencedData$Date, fencedData$Time), "%d/%m/%Y %H:%M:%S")
 
-png("plot3.png", width=480, height=480)
-
+png("plot3.png", width=504, height=504)
+par(bg=NA)
 plot(fencedData$DateTime, fencedData$Sub_metering_1, type="l")
 lines(fencedData$DateTime, fencedData$Sub_metering_2, col="red")
 lines(fencedData$DateTime, fencedData$Sub_metering_3, col="blue")
